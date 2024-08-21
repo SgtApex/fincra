@@ -86,7 +86,7 @@ export default function Home() {
         </Link>
 
         {/** operations path */}
-        <Link href={'/pages/sales'}
+        <Link href={'/pages/operations'}
           w={'400px'}
           h={'165px'}>
           <Box
