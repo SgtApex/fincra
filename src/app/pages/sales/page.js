@@ -28,7 +28,6 @@ export default function Home() {
           {/**name and bio */}
           <Box display={'flex'} flexDirection={'column'}>
             <Text fontSize={'30px'} color={'black'}>Sales Path</Text>
-            <Text>Bio</Text>
           </Box>
 
           <Divider orientation='vertical' borderColor={'black'} />

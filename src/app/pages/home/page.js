@@ -22,7 +22,7 @@ export default function Home() {
         h={'300px'}
       >
         {/** product path */}
-        <Link href={'/pages/sales'}
+        <Link href={'/pages/product'}
           w={'400px'}
           h={'165px'}>
           <Box
