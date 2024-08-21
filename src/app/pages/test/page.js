@@ -93,102 +93,148 @@ export default function Home() {
     <Box m={0} p={0}>
       <Nav />
 
-      <Box w={'full'} px={'24px'}>
+      <Box w={"full"} px={"24px"}>
         {/** info bar */}
         <Box
-          w={'full'}
-          h={'92px'}
-          bg={'#007AFF26'}
-          p={'16px'}
-          my={'40px'}
-          display={['none', 'none', 'flex', 'flex']}
-          gap={'12px'}
-          alignItems={'center'}
+          w={"full"}
+          h={"92px"}
+          bg={"#007AFF26"}
+          p={"16px"}
+          my={"40px"}
+          display={["none", "none", "flex", "flex"]}
+          gap={"12px"}
+          alignItems={"center"}
         >
           {/**name and bio */}
-          <Box display={'flex'} flexDirection={'column'} color={'#8E8E93'}>
-            <Text fontSize={'24px'}>Sales Path</Text>
+          <Box display={"none"} flexDirection={"column"} color={"#8E8E93"}>
+            <Text fontSize={"24px"}>Sales Path</Text>
             <Text>Sub header</Text>
+          </Box>
+
+          <ArrowForwardIcon display={"none"} />
+
+          <Box display={"flex"} flexDirection={"column"} color={"#8E8E93"}>
+            <Text fontSize={"30px"}>Industry Knowledge</Text>
           </Box>
 
           <ArrowForwardIcon />
 
-          <Box display={'flex'} flexDirection={'column'} color={'#8E8E93'}>
-            <Text fontSize={'30px'}>Industry Knowledge</Text>
-            <Text>Sub header</Text>
-          </Box>
-
-          <ArrowForwardIcon />
-
-          <Box display={'flex'} flexDirection={'column'} color={'black'}>
-            <Text fontSize={'30px'}>Test</Text>
+          <Box display={"flex"} flexDirection={"column"} color={"black"}>
+            <Text fontSize={"30px"}>Test</Text>
             <Text>Test for lesson 1</Text>
           </Box>
 
-          <Divider orientation='vertical' borderColor={'black'} />
+          <Divider orientation="vertical" borderColor={"black"} />
 
-          <Text fontSize={'12px'} fontWeight={'bolder'}>Last Opened: <br /> 23/08</Text>
+          <Text fontSize={"12px"} fontWeight={"bolder"}>
+            Last Opened: <br /> 23/08
+          </Text>
         </Box>
 
         <Box
-          w={'full'}
-          h={'100vh'}
-          px={'24px'}
-          display={'flex'}
-          flexDirection={['column', 'column', 'row', 'row']}
-          gap={['54px', '54px', '20px', '20px']}
+          w={"full"}
+          h={"100vh"}
+          px={"24px"}
+          display={"flex"}
+          flexDirection={["column", "column", "row", "row"]}
+          gap={["54px", "54px", "20px", "20px"]}
         >
-          <Box w={['100%', '100%', '50%', '50%']} h={'200px'} display={'flex'} flexDirection={'column'} gap={'12px'}>
-            <Box display={'flex'} w={'100%'} justifyContent={'space-between'} alignItems={'center'}>
-              <Box display={'flex'} alignItems={'center'} gap={'20px'}>
-                <Text border={"1px solid black"} p={'8px'} borderRadius={'20px'}><TimeIcon /> 1m per question</Text>
+          <Box
+            w={["100%", "100%", "50%", "50%"]}
+            h={"200px"}
+            display={"flex"}
+            flexDirection={"column"}
+            gap={"12px"}
+          >
+            <Box
+              display={"flex"}
+              w={"100%"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Box display={"flex"} alignItems={"center"} gap={"20px"}>
+                <Text
+                  border={"1px solid black"}
+                  p={"8px"}
+                  borderRadius={"20px"}
+                >
+                  <TimeIcon /> 1m per question
+                </Text>
                 <Text>{questions.length} Questions</Text>
               </Box>
               <ArrowForwardIcon boxSize={12} />
             </Box>
 
             <Text>
-              Double tap on any option to pick the correct answer. Each question has 10 points. You need {CUT_OFF_POINTS} points to pass this lesson. See your current total points below:
+              Double tap on any option to pick the correct answer. Each question
+              has 10 points. You need {CUT_OFF_POINTS} points to pass this
+              lesson. See your current total points below:
             </Text>
 
-            <Text textAlign={'center'} w={'120px'} p={'8px'} bg={'#DF8620'} borderRadius={'20px'} color={'white'}>
+            <Text
+              textAlign={"center"}
+              w={"120px"}
+              p={"8px"}
+              bg={"#DF8620"}
+              borderRadius={"20px"}
+              color={"white"}
+            >
               {score} points <StarIcon />
             </Text>
           </Box>
 
           {!testComplete ? (
-            <Box w={['100%', '100%', '50%', '50%']} h={'200px'} display={'flex'} flexDirection={'column'} gap={'20px'}>
-              <Box display={'flex'} gap={'8px'} alignItems={'center'}>
-                <Text p={'12px'} color={'white'} bg={'black'} textAlign={'center'} borderRadius={'8px'}>
+            <Box
+              w={["100%", "100%", "50%", "50%"]}
+              h={"200px"}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"20px"}
+            >
+              <Box display={"flex"} gap={"8px"} alignItems={"center"}>
+                <Text
+                  p={"12px"}
+                  color={"white"}
+                  bg={"black"}
+                  textAlign={"center"}
+                  borderRadius={"8px"}
+                >
                   {currentQuestionIndex + 1}
                 </Text>
                 <Text>{currentQuestion.question}</Text>
               </Box>
 
               <Box
-                display={'grid'}
-                gridTemplateRows={'repeat(2, 1fr)'}
-                gridTemplateColumns={'repeat(2, 1fr)'}
-                gap={'10px'}
+                display={"grid"}
+                gridTemplateRows={"repeat(2, 1fr)"}
+                gridTemplateColumns={"repeat(2, 1fr)"}
+                gap={"10px"}
               >
                 {currentQuestion.options.map((option, index) => (
                   <Box
                     key={index}
-                    w={'full'}
-                    h={'40px'}
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
-                    border={'1px solid black'}
-                    borderRadius={'8px'}
-                    p={'40px'}
-                    textAlign={'center'}
-                    bg={showCorrectAnswer && index === currentQuestion.correctAnswer ? 'green.100' : selectedOption === index ? 'red.100' : 'white'}
+                    w={"full"}
+                    h={"40px"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    border={"1px solid black"}
+                    borderRadius={"8px"}
+                    p={"40px"}
+                    textAlign={"center"}
+                    bg={
+                      showCorrectAnswer &&
+                      index === currentQuestion.correctAnswer
+                        ? "green.100"
+                        : selectedOption === index
+                        ? "red.100"
+                        : "white"
+                    }
                     onClick={() => handleOptionClick(index)}
-                    cursor='pointer'
-                    _disabled={{ cursor: 'default' }}
+                    cursor="pointer"
+                    _disabled={{ cursor: "default" }}
                     isDisabled={showCorrectAnswer}
-                    fontSize={['10px', '10px', '18px', '18px']}
+                    fontSize={["10px", "10px", "18px", "18px"]}
                   >
                     <Text>{option}</Text>
                   </Box>
@@ -196,10 +242,10 @@ export default function Home() {
               </Box>
 
               <Button
-                bg={'purple'}
-                p={'12px'}
-                color={'white'}
-                w={'200px'}
+                bg={"purple"}
+                p={"12px"}
+                color={"white"}
+                w={"200px"}
                 onClick={handleSkip}
                 isDisabled={showCorrectAnswer}
               >
@@ -207,21 +253,56 @@ export default function Home() {
               </Button>
             </Box>
           ) : (
-            <Box w={['100%', '100%', '50%', '50%']} h={'200px'} display={'flex'} flexDirection={'column'} gap={'20px'}>
-              <Box display={'flex'} flexDirection={'column'} gap={'20px'} justifyContent={'center'} alignItems={'center'}>
+            <Box
+              w={["100%", "100%", "50%", "50%"]}
+              h={"200px"}
+              display={"flex"}
+              flexDirection={"column"}
+              gap={"20px"}
+            >
+              <Box
+                display={"flex"}
+                flexDirection={"column"}
+                gap={"20px"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
                 {score >= CUT_OFF_POINTS ? (
                   <>
                     <Heading>Congratulations!</Heading>
                     <Text>You are now competent.</Text>
-                    <Text textAlign={'center'} w={'120px'} p={'8px'} bg={'#DF8620'} borderRadius={'20px'} color={'white'}>
+                    <Text
+                      textAlign={"center"}
+                      w={"120px"}
+                      p={"8px"}
+                      bg={"#DF8620"}
+                      borderRadius={"20px"}
+                      color={"white"}
+                    >
                       {score} points <StarIcon />
                     </Text>
                   </>
                 ) : (
-                  <Box display={'flex'} flexDirection={'column'} gap={'20px'} justifyContent={'center'} alignItems={'center'}>
-                  <Heading>Ouch</Heading>
-                  <Text>I believe, you should try again, you are delay is not denial  </Text>
-                  <Text textAlign={'center'} w={'120px'} p={'8px'} bg={'#DF8620'} borderRadius={'20px'} color={'white'}>
+                  <Box
+                    display={"flex"}
+                    flexDirection={"column"}
+                    gap={"20px"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                  >
+                    <Heading>Ouch</Heading>
+                    <Text>
+                      I believe, you should try again, you are delay is not
+                      denial{" "}
+                    </Text>
+                    <Text
+                      textAlign={"center"}
+                      w={"120px"}
+                      p={"8px"}
+                      bg={"#DF8620"}
+                      borderRadius={"20px"}
+                      color={"white"}
+                    >
                       {score} points <StarIcon />
                     </Text>
                   </Box>
@@ -229,10 +310,14 @@ export default function Home() {
               </Box>
 
               <Button
-                bg={score >= CUT_OFF_POINTS ? '#7535FD' : 'red.500'}
-                color={'white'}
-                p={'12px'}
-                onClick={score >= CUT_OFF_POINTS ? () => alert("Proceed to next lesson") : restartTest}
+                bg={score >= CUT_OFF_POINTS ? "#7535FD" : "red.500"}
+                color={"white"}
+                p={"12px"}
+                onClick={
+                  score >= CUT_OFF_POINTS
+                    ? () => alert("Proceed to next lesson")
+                    : restartTest
+                }
               >
                 {score >= CUT_OFF_POINTS ? (
                   <>
@@ -244,12 +329,11 @@ export default function Home() {
                   </>
                 )}
               </Button>
-
             </Box>
           )}
         </Box>
 
-        <Text fontSize={'lg'} color={'blue.500'} mt={4}>
+        <Text fontSize={"lg"} color={"blue.500"} mt={4}>
           Time Remaining: {timer}s
         </Text>
       </Box>

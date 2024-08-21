@@ -14,7 +14,7 @@ export default function Home() {
         my={'80px'}
         display={'flex'}
         flexDirection={['column', 'column', 'row', 'row']}
-        justifyContent={'space-between'}
+        justifyContent={'center'}
         alignItems={'center'}
         gap={'40px'}
         w={'full'}
@@ -23,7 +23,7 @@ export default function Home() {
       >
         {/** product path */}
         <Link href={'/pages/product'}
-          w={'400px'}
+          w={'500px'}
           h={'165px'}>
           <Box
             w={'full'}
@@ -55,7 +55,7 @@ export default function Home() {
 
         {/** sales path */}
         <Link href={'/pages/sales'}
-          w={'400px'}
+          w={'500px'}
           h={'165px'}>
           <Box
             w={'full'}
@@ -87,7 +87,7 @@ export default function Home() {
 
         {/** operations path */}
         <Link href={'/pages/operations'}
-          w={'400px'}
+          w={'500px'}
           h={'165px'}>
           <Box
             w={'full'}

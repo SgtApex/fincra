@@ -22,7 +22,7 @@ export default function Nav() {
             <Image src="/logo.png" w={'91px'} height={'auto'} />
             </Link>
 
-            <Text display={['none', 'none', 'flex', 'flex']} color={'#7535FD'} fontWeight={400} fontSize={'Title Large/Size'} lineHeight={'Title Large/Line Height'}>Fincra competence matrix</Text>
+            <Text display={['none', 'none', 'flex', 'flex']} color={'#7535FD'} fontWeight={400} fontSize={'24px'} lineHeight={'Title Large/Line Height'}>Fincra competence matrix</Text>
 
             <Box
             w={'153px'}

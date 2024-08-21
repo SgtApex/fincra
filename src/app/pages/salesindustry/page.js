@@ -24,14 +24,12 @@ export default function Home() {
           {/**name and bio */}
           <Box display={'flex'} flexDirection={'column'} color={'#8E8E93'}>
             <Text fontSize={'24px'}>Sales Path</Text>
-            <Text>Sub header</Text>
           </Box>
 
           <ArrowForwardIcon />
 
           <Box display={'flex'} flexDirection={'column'} color={'black'}>
             <Text fontSize={'30px'}>Industry Knowledge</Text>
-            <Text>Sub header</Text>
           </Box>
 
           <ArrowForwardIcon />
