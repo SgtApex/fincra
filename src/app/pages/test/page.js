@@ -108,7 +108,6 @@ export default function Home() {
           {/**name and bio */}
           <Box display={"none"} flexDirection={"column"} color={"#8E8E93"}>
             <Text fontSize={"24px"}>Sales Path</Text>
-            <Text>Sub header</Text>
           </Box>
 
           <ArrowForwardIcon display={"none"} />
