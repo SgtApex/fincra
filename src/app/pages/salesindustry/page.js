@@ -44,7 +44,7 @@ export default function Home() {
             <video
               width="100%"
               height="500px"
-              src="/vid1.mp4"
+              src="/sm2.mp4"
               controls // Add controls for play/pause/volume, etc.
               style={{ borderRadius: '12px' }}
             >
